@@ -3,50 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>C++ Interview Hub</title>
+  <title>Login - C++ Interview Hub</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background: #0056b3;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>C++ Interview Hub</h1>
-    <nav>
-      <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cpp-basics.html">C++ Basics</a></li>
-        <li><a href="oop-concepts.html">OOP Concepts</a></li>
-        <li><a href="data-structures.html">Data Structures</a></li>
-        <li><a href="coding-problems.html">Coding Problems</a></li>
-        <li><a href="interview-questions.html">Interview Questions</a></li>
-        <li><a href="cheatSheet.html">C++ Cheat Sheet</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-  </header>
+  <main class="login-container">
+    <h2>Login</h2>
+    <div class="error" id="errorMsg"></div>
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" required />
 
-  <main>
-    <section class="hero">
-      <h2>Welcome to the C++ Interview Hub!</h2>
-      <p>Master C++ for interviews with curated questions, guides, and hands-on practice.</p>
-    </section>
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
 
-    <section class="cards">
-      <div class="card">
-        <h3>C++ Basics</h3>
-        <p>Learn syntax, data types, and control flow to build a strong foundation.</p>
-      </div>
-      <div class="card">
-        <h3>OOP Concepts</h3>
-        <p>Dive deep into encapsulation, inheritance, and polymorphism.</p>
-      </div>
-      <div class="card">
-        <h3>Interview Questions</h3>
-        <p>Explore top questions with detailed solutions and code samples.</p>
-      </div>
-    </section>
+      <button type="submit">Login</button>
+    </form>
   </main>
 
-  <footer>
-    <p>&copy; 2025 C++ Interview Hub</p>
-  </footer>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!username || !password) {
+        errorMsg.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      if (username === "admin" && password === "admin123") {
+        window.location.href = "index.html";
+      } else {
+        errorMsg.textContent = "Invalid credentials.";
+      }
+    });
+  </script>
 </body>
 </html>
