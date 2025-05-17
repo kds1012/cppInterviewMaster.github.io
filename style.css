@@ -1,103 +1,108 @@
-/* style.css */
-
-body {
-  font-family: sans-serif;
+/* Reset & base */
+* {
   margin: 0;
   padding: 0;
-  background: #f9f9f9;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f4;
   color: #333;
   line-height: 1.6;
 }
 
+/* Header */
 header {
-  background: #2c3e50;
+  background: #007BFF;
   color: white;
-  padding: 1rem;
+  padding: 20px 0;
   text-align: center;
 }
 
 .navbar {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  background: #34495e;
-  padding: 0.5rem;
+  flex-wrap: wrap;
   list-style: none;
-  margin: 0;
+  background: #0056b3;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.navbar li {
+  margin: 0 10px;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
 .navbar a:hover {
-  text-decoration: underline;
+  background: #003f7f;
 }
 
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #007BFF, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+/* Main Content */
 main {
-  padding: 1.5rem;
-  max-width: 1000px;
+  padding: 20px;
+  max-width: 1100px;
   margin: auto;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card {
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 300px;
+  transition: transform 0.2s ease;
 }
 
-pre {
-  background: #f0f0f0;
-  padding: 1rem;
-  overflow-x: auto;
-  border-left: 4px solid #ccc;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-code {
-  font-family: monospace;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-
-table, th, td {
-  border: 1px solid #ccc;
-}
-
-th, td {
-  padding: 0.75rem;
-  text-align: left;
-}
-
-ul {
-  padding-left: 1.5rem;
-}
-
+/* Footer */
 footer {
   text-align: center;
-  background: #2c3e50;
+  background: #007BFF;
   color: white;
-  padding: 0.75rem;
-  font-size: 0.9rem;
-  position: static;
+  padding: 15px 0;
+  margin-top: 40px;
 }
 
-/* ✅ Responsive tweaks for smaller screens */
+/* Responsive */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: center;
   }
 
-  main {
-    padding: 1rem;
-    margin: 1rem;
-  }
-
-  table, pre {
-    font-size: 0.9rem;
+  .cards {
+    flex-direction: column;
+    align-items: center;
   }
 }
