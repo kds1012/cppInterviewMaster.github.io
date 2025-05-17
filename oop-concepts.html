@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OOP Concepts</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OOP Concepts - C++ Interview Hub</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>C++ Interview Questions</h1>
-    <ul class="navbar">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cpp-basics.html">Basics</a></li>
-      <li><a href="oop-concepts.html">OOP</a></li>
-      <li><a href="advanced-cpp.html">Advanced</a></li>
-      <li><a href="interview-questions.html">Interview Qs</a></li>
-       <li><a href="CheatSheetSyntax.html">C++ Cheat Sheet Syntax</a></li>
-    </ul>
+    <h1>C++ Interview Hub</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cpp-basics.html">C++ Basics</a></li>
+        <li><a href="oop-concepts.html" class="active">OOP Concepts</a></li>
+        <li><a href="data-structures.html">Data Structures</a></li>
+        <li><a href="coding-problems.html">Coding Problems</a></li>
+        <li><a href="interview-questions.html">Interview Questions</a></li>
+        <li><a href="cheatSheet.html">Cheat Sheet</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <h2>Object-Oriented Programming (OOP)</h2>
-    <p><strong>Q1:</strong> What are the 4 pillars of OOP?</p>
-    <p><strong>Answer:</strong> Encapsulation, Inheritance, Polymorphism, Abstraction.</p>
 
-    <p><strong>Q2:</strong> What is function overloading vs overriding?</p>
-    <p><strong>Answer:</strong> Overloading means same function name with different parameters. Overriding means redefining base class method in derived class.</p>
+  <section class="page-header">
+    <h2>Object-Oriented Programming (OOP)</h2>
+    <p>Key concepts and interview questions on OOP in C++</p>
+  </section>
+
+  <main>
+    <article>
+      <h3>What are the 4 pillars of OOP?</h3>
+      <p><strong>Answer:</strong> Encapsulation, Inheritance, Polymorphism, Abstraction.</p>
+
+      <h3>What is function overloading vs overriding?</h3>
+      <p><strong>Answer:</strong> Overloading means same function name with different parameters. Overriding means redefining base class method in derived class.</p>
+
+      <h3>Example: Basic Class</h3>
+      <pre><code>class MyClass {
+private:
+  int x;
+public:
+  MyClass(int val) : x(val) {}
+  void display() const { std::cout &lt;&lt; x &lt;&lt; std::endl; }
+  ~MyClass() {}
+};</code></pre>
+    </article>
   </main>
+
   <footer>
-    &copy; 2025 C++ Interview Prep
+    &copy; 2025 C++ Interview Hub
   </footer>
 </body>
 </html>
