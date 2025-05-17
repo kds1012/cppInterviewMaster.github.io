@@ -2,13 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>C++ Interview Hub</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    #logoutBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 12px;
+      background: white;
+      color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    #logoutBtn:hover {
+      background-color: #e6f0ff;
+    }
+    header {
+      position: relative;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>C++ Interview Hub</h1>
+    <button id="logoutBtn">Logout</button>
     <nav>
       <ul class="navbar">
         <li><a href="index.html">Home</a></li>
@@ -24,29 +46,25 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Welcome to the C++ Interview Hub!</h2>
-      <p>Master C++ for interviews with curated questions, guides, and hands-on practice.</p>
-    </section>
-
-    <section class="cards">
-      <div class="card">
-        <h3>C++ Basics</h3>
-        <p>Learn syntax, data types, and control flow to build a strong foundation.</p>
-      </div>
-      <div class="card">
-        <h3>OOP Concepts</h3>
-        <p>Dive deep into encapsulation, inheritance, and polymorphism.</p>
-      </div>
-      <div class="card">
-        <h3>Interview Questions</h3>
-        <p>Explore top questions with detailed solutions and code samples.</p>
-      </div>
-    </section>
+    <h2>Welcome to the C++ Interview Hub!</h2>
+    <p>This website is designed to help you prepare for C++ interviews with tutorials, practice problems, and detailed questions.</p>
   </main>
 
   <footer>
     <p>&copy; 2025 C++ Interview Hub</p>
   </footer>
+
+  <script>
+    // Redirect to login if not logged in
+    if (!localStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+
+    // Logout button logic
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    });
+  </script>
 </body>
 </html>
