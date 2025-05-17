@@ -1,35 +1,36 @@
 /* style.css */
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
 header {
-  background: #333;
+  background-color: #2c3e50;
   color: white;
-  padding: 20px 0;
+  padding: 1rem 0;
   text-align: center;
 }
 
 .navbar {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #34495e;
+  margin: 0;
+  padding: 0.5rem 0;
   list-style: none;
-  padding: 0;
-  margin: 10px 0;
-  background: #444;
-}
-
-.navbar li {
-  margin: 0 15px;
 }
 
 .navbar a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .navbar a:hover {
@@ -37,15 +38,53 @@ header {
 }
 
 main {
-  padding: 20px;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  overflow-x: auto;
+  border-left: 3px solid #ccc;
+}
+
+code {
+  font-family: monospace;
+  color: #2c3e50;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: #fff;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+ul {
+  padding-left: 1.5rem;
 }
 
 footer {
   text-align: center;
-  background: #333;
+  background-color: #2c3e50;
   color: white;
-  padding: 10px 0;
+  padding: 0.75rem 0;
   position: fixed;
   bottom: 0;
   width: 100%;
+  font-size: 0.9rem;
 }
