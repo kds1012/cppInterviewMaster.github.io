@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -90,6 +90,61 @@
         errorMsg.textContent = "Invalid credentials.";
       }
     });
+  </script>
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - C++ Interview Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    <p id="loginError" class="error"></p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const loginError = document.getElementById("loginError");
+
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      // Retrieve users from localStorage
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+      if (users[email] && users[email] === password) {
+        // Login success
+        localStorage.setItem("loggedIn", email);
+        window.location.href = "index.html";
+      } else {
+        loginError.textContent = "Invalid email or password.";
+      }
+    });
+
+    // Redirect if already logged in
+    if (localStorage.getItem("loggedIn")) {
+      window.location.href = "index.html";
+    }
   </script>
 </body>
 </html>
