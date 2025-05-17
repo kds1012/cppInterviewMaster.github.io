@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - C++ Interview Hub</title>
-    <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C++ Interview Hub</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+  <header>
+    <h1>C++ Interview Hub</h1>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cpp-basics.html">C++ Basics</a></li>
+        <li><a href="oop-concepts.html">OOP Concepts</a></li>
+        <li><a href="data-structures.html">Data Structures</a></li>
+        <li><a href="coding-problems.html">Coding Problems</a></li>
+        <li><a href="interview-questions.html">Interview Questions</a></li>
+        <li><a href="cheatSheet.html">C++ Cheat Sheet</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+  <main>
+    <section class="hero">
+      <h2>Welcome to the C++ Interview Hub!</h2>
+      <p>Master C++ for interviews with curated questions, guides, and hands-on practice.</p>
+    </section>
 
-      <div class="toggle-password">
-        <input type="checkbox" id="showPassword">
-        <label for="showPassword">Show Password</label>
+    <section class="cards">
+      <div class="card">
+        <h3>C++ Basics</h3>
+        <p>Learn syntax, data types, and control flow to build a strong foundation.</p>
       </div>
+      <div class="card">
+        <h3>OOP Concepts</h3>
+        <p>Dive deep into encapsulation, inheritance, and polymorphism.</p>
+      </div>
+      <div class="card">
+        <h3>Interview Questions</h3>
+        <p>Explore top questions with detailed solutions and code samples.</p>
+      </div>
+    </section>
+  </main>
 
-      <button type="submit">Login</button>
-      <p id="loginError" class="error-message"></p>
-    </form>
-  </div>
-
-  <script src="login.js"></script>
+  <footer>
+    <p>&copy; 2025 C++ Interview Hub</p>
+  </footer>
 </body>
 </html>
