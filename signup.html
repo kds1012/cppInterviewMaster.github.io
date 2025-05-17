@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign Up - C++ Interview Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" minlength="6" required />
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" minlength="6" required />
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+    <p id="signupError" class="error"></p>
+  </div>
+
+  <script>
+    const signupForm = document.getElementById("signupForm");
+    const signupError = document.getElementById("signupError");
+
+    signupForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        signupError.textContent = "Passwords do not match.";
+        return;
+      }
+
+      if (password.length < 6) {
+        signupError.textContent = "Password must be at least 6 characters.";
+        return;
+      }
+
+      // Retrieve users from localStorage
+      const users = JSON.parse(localStorage.getItem("users") || "{}");
+
+      if (users[email]) {
+        signupError.textContent = "Email already registered.";
+        return;
+      }
+
+      // Save new user
+      users[email] = password;
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("loggedIn", email);
+
+      window.location.href = "index.html";
+    });
+
+    // Redirect if already logged in
+    if (localStorage.getItem("loggedIn")) {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
