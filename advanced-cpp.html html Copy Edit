@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced C++</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>C++ Interview Questions</h1>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cpp-basics.html">Basics</a></li>
+      <li><a href="oop-concepts.html">OOP</a></li>
+      <li><a href="advanced-cpp.html">Advanced</a></li>
+      <li><a href="interview-questions.html">Interview Qs</a></li>
+    </ul>
+  </header>
+  <main>
+    <h2>Advanced C++ Topics</h2>
+    <p><strong>Q1:</strong> What is a smart pointer?</p>
+    <p><strong>Answer:</strong> Smart pointers manage memory automatically using RAII. Examples: `unique_ptr`, `shared_ptr`, `weak_ptr`.</p>
+
+    <p><strong>Q2:</strong> What is move semantics?</p>
+    <p><strong>Answer:</strong> Move semantics allows resources to be transferred from one object to another, improving performance.</p>
+  </main>
+  <footer>
+    &copy; 2025 C++ Interview Prep
+  </footer>
+</body>
+</html>
