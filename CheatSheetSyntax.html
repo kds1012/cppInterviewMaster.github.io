@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>C++ Cheat Sheet Syntax</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>🧠 Core C++ Concepts</h2>
-<h3>1. Basics</h3>
-<pre><code>#include &lt;iostream&gt;
+  <header>
+    <h1>C++ Interview Questions</h1>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cpp-basics.html">Basics</a></li>
+      <li><a href="oop-concepts.html">OOP</a></li>
+      <li><a href="advanced-cpp.html">Advanced</a></li>
+      <li><a href="interview-questions.html">Interview Qs</a></li>
+      <li><a href="CheatSheetSyntax.html">C++ Cheat Sheet Syntax</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <h2>🧠 Core C++ Concepts</h2>
+    <h3>1. Basics</h3>
+    <pre><code>#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -15,25 +29,25 @@ int main() {
     return 0;
 }</code></pre>
 
-<h3>2. Data Types</h3>
-<ul>
-    <li>Primitives: int, float, double, char, bool</li>
-    <li>Modifiers: signed, unsigned, short, long</li>
-    <li>Type Aliases: <code>using Age = int;</code></li>
-</ul>
+    <h3>2. Data Types</h3>
+    <ul>
+      <li>Primitives: int, float, double, char, bool</li>
+      <li>Modifiers: signed, unsigned, short, long</li>
+      <li>Type Aliases: <code>using Age = int;</code></li>
+    </ul>
 
-<h3>3. Control Flow</h3>
-<pre><code>if (condition) { } else { }
+    <h3>3. Control Flow</h3>
+    <pre><code>if (condition) { } else { }
 switch (x) { case 1: break; default: }
 for (int i = 0; i &lt; n; ++i) { }
 while (condition) { }
 do { } while (condition);</code></pre>
 
-<hr>
+    <hr>
 
-<h2>🧱 OOP in C++</h2>
-<h3>4. Class Structure</h3>
-<pre><code>class MyClass {
+    <h2>🧱 OOP in C++</h2>
+    <h3>4. Class Structure</h3>
+    <pre><code>class MyClass {
 private:
     int x;
 
@@ -43,8 +57,8 @@ public:
     ~MyClass() {}
 };</code></pre>
 
-<h3>5. Inheritance</h3>
-<pre><code>class Base {
+    <h3>5. Inheritance</h3>
+    <pre><code>class Base {
 public:
     virtual void show() {}
 };
@@ -53,131 +67,135 @@ class Derived : public Base {
 public:
     void show() override {}
 };</code></pre>
-<ul>
-    <li>Access: public, protected, private</li>
-    <li>Use virtual destructors in base class</li>
-</ul>
+    <ul>
+      <li>Access: public, protected, private</li>
+      <li>Use virtual destructors in base class</li>
+    </ul>
 
-<hr>
+    <hr>
 
-<h2>🧰 Modern C++ Features</h2>
-<h3>6. Smart Pointers (C++11)</h3>
-<pre><code>#include &lt;memory&gt;
+    <h2>🧰 Modern C++ Features</h2>
+    <h3>6. Smart Pointers (C++11)</h3>
+    <pre><code>#include &lt;memory&gt;
 
 std::unique_ptr&lt;int&gt; ptr;
 auto ptr2 = std::make_unique&lt;int&gt;();
 auto sp = std::make_shared&lt;MyClass&gt;();</code></pre>
 
-<h3>7. Auto, Range-Based For, Structured Bindings</h3>
-<pre><code>auto x = 10;
+    <h3>7. Auto, Range-Based For, Structured Bindings</h3>
+    <pre><code>auto x = 10;
 for (auto&amp; item : vec) { }
 auto [a, b] = pair;</code></pre>
 
-<h3>8. Lambda Functions</h3>
-<pre><code>auto add = [](int a, int b) { return a + b; };</code></pre>
+    <h3>8. Lambda Functions</h3>
+    <pre><code>auto add = [](int a, int b) { return a + b; };</code></pre>
 
-<h3>9. STL Essentials</h3>
-<pre><code>#include &lt;vector&gt;, &lt;map&gt;, &lt;set&gt;, &lt;unordered_map&gt;
+    <h3>9. STL Essentials</h3>
+    <pre><code>#include &lt;vector&gt;, &lt;map&gt;, &lt;set&gt;, &lt;unordered_map&gt;
 
 vector&lt;int&gt; v = {1, 2, 3};
 sort(v.begin(), v.end());</code></pre>
 
-<hr>
+    <hr>
 
-<h2>🔌 Advanced Topics</h2>
-<h3>10. Templates</h3>
-<pre><code>template&lt;typename T&gt;
+    <h2>🔌 Advanced Topics</h2>
+    <h3>10. Templates</h3>
+    <pre><code>template&lt;typename T&gt;
 T add(T a, T b) { return a + b; }</code></pre>
 
-<h3>11. Function/Operator Overloading</h3>
-<pre><code>int func(int);
+    <h3>11. Function/Operator Overloading</h3>
+    <pre><code>int func(int);
 double func(double);
 MyClass operator+(const MyClass&amp;);</code></pre>
 
-<h3>12. RAII</h3>
-<p>Use constructors/destructors to manage resources (files, memory, etc.).</p>
+    <h3>12. RAII</h3>
+    <p>Use constructors/destructors to manage resources (files, memory, etc.).</p>
 
-<h3>13. Move Semantics</h3>
-<pre><code>class A {
+    <h3>13. Move Semantics</h3>
+    <pre><code>class A {
 public:
     A(A&amp;&amp;) noexcept;
     A&amp; operator=(A&amp;&amp;) noexcept;
 };</code></pre>
 
-<h3>14. Rule of 0 / 3 / 5</h3>
-<ul>
-    <li>0: Compiler handles everything</li>
-    <li>3: Define copy ctor, assignment, destructor</li>
-    <li>5: Add move ctor and move assignment</li>
-</ul>
+    <h3>14. Rule of 0 / 3 / 5</h3>
+    <ul>
+      <li>0: Compiler handles everything</li>
+      <li>3: Define copy ctor, assignment, destructor</li>
+      <li>5: Add move ctor and move assignment</li>
+    </ul>
 
-<hr>
+    <hr>
 
-<h2>💨 Common Pitfalls</h2>
-<table border="1" cellpadding="5">
-<tr><th>Mistake</th><th>Example / Fix</th></tr>
-<tr><td>Dangling Pointers</td><td>Use smart pointers</td></tr>
-<tr><td>Memory Leaks</td><td>Use RAII or delete</td></tr>
-<tr><td>Object Slicing</td><td>Use virtual functions</td></tr>
-<tr><td>Not Using const</td><td>Prefer const everywhere</td></tr>
-<tr><td>Undefined Behavior</td><td>Initialize variables, avoid invalid access</td></tr>
-<tr><td>Copy vs Reference</td><td>Use const references for large objects</td></tr>
-<tr><td>Multithreading Issues</td><td>Avoid shared mutable state</td></tr>
-<tr><td>Overusing Macros</td><td>Use constexpr, inline</td></tr>
-<tr><td>Missing Virtual Destructors</td><td>Use virtual ~Base()</td></tr>
-</table>
+    <h2>💨 Common Pitfalls</h2>
+    <table border="1" cellpadding="5">
+      <tr><th>Mistake</th><th>Example / Fix</th></tr>
+      <tr><td>Dangling Pointers</td><td>Use smart pointers</td></tr>
+      <tr><td>Memory Leaks</td><td>Use RAII or delete</td></tr>
+      <tr><td>Object Slicing</td><td>Use virtual functions</td></tr>
+      <tr><td>Not Using const</td><td>Prefer const everywhere</td></tr>
+      <tr><td>Undefined Behavior</td><td>Initialize variables, avoid invalid access</td></tr>
+      <tr><td>Copy vs Reference</td><td>Use const references for large objects</td></tr>
+      <tr><td>Multithreading Issues</td><td>Avoid shared mutable state</td></tr>
+      <tr><td>Overusing Macros</td><td>Use constexpr, inline</td></tr>
+      <tr><td>Missing Virtual Destructors</td><td>Use virtual ~Base()</td></tr>
+    </table>
 
-<h4>Other Pitfalls</h4>
-<ul>
-    <li>Returning reference to local</li>
-    <li>Improper exception handling</li>
-    <li>Confusion between reference, pointer, copy</li>
-    <li>Off-by-one errors</li>
-    <li>Mismatched new/delete</li>
-    <li>Avoid <code>#define</code> for constants</li>
-</ul>
+    <h4>Other Pitfalls</h4>
+    <ul>
+      <li>Returning reference to local</li>
+      <li>Improper exception handling</li>
+      <li>Confusion between reference, pointer, copy</li>
+      <li>Off-by-one errors</li>
+      <li>Mismatched new/delete</li>
+      <li>Avoid <code>#define</code> for constants</li>
+    </ul>
 
-<hr>
+    <hr>
 
-<h2>🔄 Keywords Quick Reference</h2>
-<table border="1" cellpadding="5">
-<tr><th>Keyword</th><th>Use</th></tr>
-<tr><td>static</td><td>Shared across objects</td></tr>
-<tr><td>const</td><td>Immutable value</td></tr>
-<tr><td>inline</td><td>Suggest inlining</td></tr>
-<tr><td>mutable</td><td>Allow change in const method</td></tr>
-<tr><td>explicit</td><td>Disallow implicit conversion</td></tr>
-<tr><td>noexcept</td><td>Guarantee no throw</td></tr>
-<tr><td>override</td><td>Ensure override from base</td></tr>
-<tr><td>final</td><td>Disallow further inheritance</td></tr>
-<tr><td>delete</td><td>Disable generation</td></tr>
-<tr><td>default</td><td>Force default generation</td></tr>
-</table>
+    <h2>🔄 Keywords Quick Reference</h2>
+    <table border="1" cellpadding="5">
+      <tr><th>Keyword</th><th>Use</th></tr>
+      <tr><td>static</td><td>Shared across objects</td></tr>
+      <tr><td>const</td><td>Immutable value</td></tr>
+      <tr><td>inline</td><td>Suggest inlining</td></tr>
+      <tr><td>mutable</td><td>Allow change in const method</td></tr>
+      <tr><td>explicit</td><td>Disallow implicit conversion</td></tr>
+      <tr><td>noexcept</td><td>Guarantee no throw</td></tr>
+      <tr><td>override</td><td>Ensure override from base</td></tr>
+      <tr><td>final</td><td>Disallow further inheritance</td></tr>
+      <tr><td>delete</td><td>Disable generation</td></tr>
+      <tr><td>default</td><td>Force default generation</td></tr>
+    </table>
 
-<hr>
+    <hr>
 
-<h2>🧪 Interview-Specific</h2>
-<h3>15. Common Questions</h3>
-<ul>
-    <li>Deep vs Shallow Copy</li>
-    <li>Virtual Table, RTTI</li>
-    <li>STL Internals</li>
-    <li>Class Memory Layout</li>
-    <li>New/Delete vs malloc/free</li>
-    <li>Thread Safety</li>
-    <li>Move vs Copy</li>
-    <li>RAII &amp; Exception Safety</li>
-</ul>
+    <h2>🧪 Interview-Specific</h2>
+    <h3>15. Common Questions</h3>
+    <ul>
+      <li>Deep vs Shallow Copy</li>
+      <li>Virtual Table, RTTI</li>
+      <li>STL Internals</li>
+      <li>Class Memory Layout</li>
+      <li>New/Delete vs malloc/free</li>
+      <li>Thread Safety</li>
+      <li>Move vs Copy</li>
+      <li>RAII &amp; Exception Safety</li>
+    </ul>
 
-<h3>16. Mini Coding Tasks</h3>
-<ul>
-    <li>LRU Cache</li>
-    <li>Reverse Linked List</li>
-    <li>Thread-Safe Singleton</li>
-    <li>Custom Smart Pointer</li>
-    <li>Memory Pool Allocator</li>
-    <li>Thread Pool</li>
-</ul>
+    <h3>16. Mini Coding Tasks</h3>
+    <ul>
+      <li>LRU Cache</li>
+      <li>Reverse Linked List</li>
+      <li>Thread-Safe Singleton</li>
+      <li>Custom Smart Pointer</li>
+      <li>Memory Pool Allocator</li>
+      <li>Thread Pool</li>
+    </ul>
+  </main>
 
+  <footer>
+    &copy; 2025 C++ Interview Prep
+  </footer>
 </body>
 </html>
